@@ -15,6 +15,22 @@ def main():
         help_message = \
 """
 
++import sys
++
++def main():
++    args = sys.argv[1:]
++    if len(args) == 0:
++        args = ["error"]
++    if args[0] == "help":
++        help_message = \
++"""
+
+
+
+
+
+
+
 fib.py
 
 Usage
@@ -54,7 +70,7 @@ phi_approx_output_format = \
 
 def phi_approx(n, show_output=True):
     """Return the nth-order Fibonacci approximation to the golden ratio."""
-    fib_n = fibbb(n)
+    fib_n = fib(n)
     fib_nm1 = fib(n - 1)
     phi = float(fib_n)/fib_nm1
     if show_output:
